@@ -65,3 +65,18 @@ void viewPlayers() {
         return; 
     }
 } 
+
+void updatePlayer() {
+    player p; 
+    cout << "\nEnter player update: ";
+    
+    cout << "updated goals: ";
+    cin >> p.goals; 
+
+    cout << "updated assists: ";
+    cin >> p.assists; 
+
+    cout << "updated games played: "; 
+    cin >> p.gamesPlayed; 
+    
+}
