@@ -64,6 +64,13 @@ void viewPlayers() {
         cout << "\nNo players available.\n";
         return; 
     }
+    cout << "\nTeam Players:\n";
+    for (size_t i = 0; i < team.size(); ++i) {
+        cout << i + 1 << ". " << team[i].name 
+             << " | Goals: " << team[i].goals
+             << " | Assists: " << team[i].assists
+             << " | Games Played: " << team[i].gamesPlayed << endl;
+    }
 } 
 
 void updatePlayer() {
@@ -78,5 +85,5 @@ void updatePlayer() {
 
     cout << "updated games played: "; 
     cin >> p.gamesPlayed; 
-    
+
 }
