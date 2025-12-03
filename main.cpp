@@ -34,15 +34,16 @@ void loadFromFile();
 void menu();
 
 int main() {
-    loadFromFile();
-    menu();
+    addPlayer();
+    viewPlayers();
+    updatePlayer();
+    viewPlayers();
     return 0;
 }
 
 void addPlayer() {
     player p; 
     cout << "\nEnter player name: ";
-    cin.ignore();
     getline(cin, p.name);
 
     cout << "Goals scored: ";
@@ -56,6 +57,8 @@ void addPlayer() {
 
     team.push_back(p);
     cout << "\nPlayer added successfully!\n";
+    
+    return;
 
 }
 
@@ -71,6 +74,7 @@ void viewPlayers() {
              << " | Assists: " << team[i].assists
              << " | Games Played: " << team[i].gamesPlayed << endl;
     }
+    return;
 } 
 
 void updatePlayer() {
@@ -78,7 +82,6 @@ void updatePlayer() {
             cout << "\nNo players available to update.\n";
             return; 
         }
-    viewPlayers();
     size_t index;
     cout << "\nEnter the number of the player to update: ";
     cin >> index;
@@ -96,7 +99,7 @@ void updatePlayer() {
     getline(cin, newName);
     if (!newName.empty()) team[index].name = newName;
 
-    
+
     player p; 
     cout << "\nEnter player update: ";
     
@@ -109,4 +112,8 @@ void updatePlayer() {
     cout << "updated games played: "; 
     cin >> p.gamesPlayed; 
 
+    
+    return;
+
 }
+
