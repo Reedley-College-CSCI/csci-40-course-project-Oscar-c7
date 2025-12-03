@@ -74,6 +74,29 @@ void viewPlayers() {
 } 
 
 void updatePlayer() {
+        if (team.empty()) {
+            cout << "\nNo players available to update.\n";
+            return; 
+        }
+    viewPlayers();
+    size_t index;
+    cout << "\nEnter the number of the player to update: ";
+    cin >> index;
+
+    if (index < 1 || index > team.size()) {
+        cout << "\nInvalid player number.\n";
+        return; 
+    }
+
+    index--;
+    cin.ignore();
+    
+    cout << "Enter new name or press enter to keep " << team[index].name << ": ";
+    string newName;
+    getline(cin, newName);
+    if (!newName.empty()) team[index].name = newName;
+
+    
     player p; 
     cout << "\nEnter player update: ";
     
