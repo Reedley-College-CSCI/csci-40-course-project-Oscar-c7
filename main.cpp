@@ -38,6 +38,7 @@ int main() {
     viewPlayers();
     updatePlayer();
     viewPlayers();
+    
     return 0;
 }
 
