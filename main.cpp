@@ -43,7 +43,7 @@ int main() {
 
 void addPlayer() {
     player p; 
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    
 
     cout << "\nEnter player name: ";
     getline(cin, p.name);
@@ -156,12 +156,8 @@ void loadFromFile() {
     if (!file) return;
 
     player p;
-    while (getline(file, p.name, ',') &&
-           (file >> p.goals) && (file.get() == ',') &&
-           (file >> p.assists) && (file.get() == ',') &&
-           (file >> p.gamesPlayed)) {
-        file.get();
-        team.push_back(p);
+    
+           
     }
 }
 
@@ -176,6 +172,8 @@ void menu() {
         cout << "5. Save & Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
+
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 
         switch (choice) {
