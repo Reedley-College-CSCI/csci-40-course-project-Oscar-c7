@@ -34,11 +34,8 @@ void loadFromFile();
 void menu();
 
 int main() {
-    addPlayer();
-    viewPlayers();
-    updatePlayer();
-    viewPlayers();
-    
+    loadFromFile();
+    menu(); 
     return 0;
 }
 
