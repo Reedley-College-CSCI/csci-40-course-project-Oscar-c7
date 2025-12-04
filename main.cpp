@@ -156,5 +156,21 @@ void loadFromFile() {
     }
 }
 
+void menu() {
+    int choice;
+    do {
+        cout << "\nSoccer Stats Tracker\n";
+        cout << "1. Add Player\n";
+        cout << "2. View Players\n";
+        cout << "3. Update Player\n";
+        cout << "4. Remove Player\n";
+        cout << "5. Save & Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        
+    }
+}
+
 
 
