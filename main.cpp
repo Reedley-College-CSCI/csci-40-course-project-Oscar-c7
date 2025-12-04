@@ -118,7 +118,7 @@ void updatePlayer() {
     cout << "updated games played: "; 
     cin >> team[index].gamesPlayed;
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-    
+
     cout << "\nPlayer updated successfully!\n";
 
     
@@ -165,17 +165,21 @@ void loadFromFile() {
         size_t pos = 0;
 
         pos = line.find(',');
+        if(pos == string::npos) continue;
         p.name = line.substr(0, pos);
         line.erase(0, pos + 1);
 
         pos = line.find(',');
+        if(pos == string::npos) continue;
         p.goals = stoi(line.substr(0, pos));
         line.erase(0, pos + 1);
 
         pos = line.find(',');
+        if(pos == string::npos) continue;
         p.assists = stoi(line.substr(0, pos));
         line.erase(0, pos + 1);
 
+    if(!line.empty())
         p.gamesPlayed = stoi(line);
 
         team.push_back(p);
