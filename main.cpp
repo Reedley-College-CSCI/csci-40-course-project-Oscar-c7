@@ -139,6 +139,7 @@ void removePlayer() {
     size_t index;
     cout << "\nEnter the number of the player to remove: ";
     cin >> index;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     if (index < 1 || index > team.size()) {
         cout << "\nInvalid player number.\n";
