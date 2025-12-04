@@ -142,3 +142,19 @@ void saveToFile() {
     }
 }
 
+void loadFromFile() {
+    ifstream file("teamdata.txt");
+    if (!file) return;
+
+    player p;
+    while (getline(file, p.name, ',') &&
+           (file >> p.goals) && (file.get() == ',') &&
+           (file >> p.assists) && (file.get() == ',') &&
+           (file >> p.gamesPlayed)) {
+        file.get(); // consume newline
+        team.push_back(p);
+    }
+}
+
+
+
