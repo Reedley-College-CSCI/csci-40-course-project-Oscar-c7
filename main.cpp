@@ -49,13 +49,16 @@ void addPlayer() {
     getline(cin, p.name);
 
     cout << "Goals scored: ";
-    cin >> p.goals; 
+    cin >> p.goals;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
 
     cout << "assists: ";
     cin >> p.assists; 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "games played: ";
-    cin >> p.gamesPlayed; 
+    cin >> p.gamesPlayed;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
 
     team.push_back(p);
     cout << "\nPlayer added successfully!\n";
