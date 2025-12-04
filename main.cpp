@@ -11,6 +11,7 @@
 #include <vector>
 #include <fstream> 
 #include <string>
+#include <limits>
 using namespace std; 
 
 
@@ -42,6 +43,8 @@ int main() {
 
 void addPlayer() {
     player p; 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     cout << "\nEnter player name: ";
     getline(cin, p.name);
 
@@ -91,7 +94,7 @@ void updatePlayer() {
     }
 
     index--;
-    cin.ignore();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     
     cout << "Enter new name or press enter to keep " << team[index].name << ": ";
     string newName;
