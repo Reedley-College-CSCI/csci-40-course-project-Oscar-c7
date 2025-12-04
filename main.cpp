@@ -90,6 +90,7 @@ void updatePlayer() {
     size_t index;
     cout << "\nEnter the number of the player to update: ";
     cin >> index;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     if (index < 1 || index > team.size()) {
         cout << "\nInvalid player number.\n";
@@ -97,8 +98,7 @@ void updatePlayer() {
     }
 
     index--;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    
+
     cout << "Enter new name or press enter to keep " << team[index].name << ": ";
     string newName;
     getline(cin, newName);
@@ -110,12 +110,15 @@ void updatePlayer() {
     
     cout << "updated goals: ";
     cin >> p.goals; 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "updated assists: ";
     cin >> p.assists; 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "updated games played: "; 
-    cin >> p.gamesPlayed; 
+    cin >> p.gamesPlayed;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
 
     team[index].goals = p.goals;
     team[index].assists = p.assists;
