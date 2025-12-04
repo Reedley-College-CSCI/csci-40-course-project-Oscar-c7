@@ -151,7 +151,7 @@ void loadFromFile() {
            (file >> p.goals) && (file.get() == ',') &&
            (file >> p.assists) && (file.get() == ',') &&
            (file >> p.gamesPlayed)) {
-        file.get(); // consume newline
+        file.get();
         team.push_back(p);
     }
 }
