@@ -135,3 +135,10 @@ void removePlayer() {
     return;
 }
 
+void saveToFile() {
+    ofstream file("team_data.txt");
+    if (auto &p : team) {
+        file << p.name << "," << p.goals << "," << p.assists << "," << p.gamesPlayed << "\n";
+    }
+}
+
