@@ -36,15 +36,15 @@ void menu();
 
 int main() {
     loadFromFile();
-
+    
     menu(); 
     return 0;
 }
 
 void addPlayer() {
     player p; 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     
-
     cout << "\nEnter player name: ";
     getline(cin, p.name);
 
@@ -102,10 +102,8 @@ void updatePlayer() {
     cout << "Enter new name or press enter to keep " << team[index].name << ": ";
     string newName;
     getline(cin, newName);
-    if (!newName.empty()) team[index].name = newName;
-
-     
-    cout << "\nEnter player update: ";
+    if (!newName.empty()) 
+    team[index].name = newName;
     
     cout << "updated goals: ";
     cin >> team[index].goals; 
@@ -121,9 +119,7 @@ void updatePlayer() {
 
     cout << "\nPlayer updated successfully!\n";
 
-    
     return;
-
 }
 
 void removePlayer() {
@@ -162,8 +158,9 @@ void loadFromFile() {
         if (line.empty()) continue;
 
         player p;
-        size_t pos = 0;
+        size_t pos;
 
+    try {
         pos = line.find(',');
         if(pos == string::npos) continue;
         p.name = line.substr(0, pos);
@@ -181,12 +178,16 @@ void loadFromFile() {
 
     if(!line.empty())
         p.gamesPlayed = stoi(line);
+     else
+        p.gamesPlayed = 0;
 
-        team.push_back(p);
-    
-           
+        team.push_back(p);     
+    } catch (const invalid_argument& ia) {
+        continue;
+    }
     }
 }
+
 
 void menu() {
     int choice;
@@ -199,7 +200,6 @@ void menu() {
         cout << "5. Save & Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
-
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 
