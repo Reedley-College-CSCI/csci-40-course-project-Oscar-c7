@@ -35,7 +35,7 @@ void menu();
 
 int main() {
     loadFromFile();
-    saveToFile();
+
     menu(); 
     return 0;
 }
@@ -143,13 +143,13 @@ void removePlayer() {
 
 void saveToFile() {
     ofstream file("team_data.txt");
-    if (auto &p : team) {
+    for (auto &p : team) {
         file << p.name << "," << p.goals << "," << p.assists << "," << p.gamesPlayed << "\n";
     }
 }
 
 void loadFromFile() {
-    ifstream file("teamdata.txt");
+    ifstream file("team_data.txt");
     if (!file) return;
 
     player p;
