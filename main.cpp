@@ -35,6 +35,7 @@ void menu();
 
 int main() {
     loadFromFile();
+    saveToFile();
     menu(); 
     return 0;
 }
@@ -113,5 +114,24 @@ void updatePlayer() {
     
     return;
 
+}
+
+void removePlayer() {
+    if (team.empty()) {
+        cout << "\nNo players available to remove.\n";
+        return; 
+    }
+    size_t index;
+    cout << "\nEnter the number of the player to remove: ";
+    cin >> index;
+
+    if (index < 1 || index > team.size()) {
+        cout << "\nInvalid player number.\n";
+        return; 
+    }
+
+    team.erase(team.begin() + index - 1);
+    cout << "\nPlayer removed successfully!\n";
+    return;
 }
 
