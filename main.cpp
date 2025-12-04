@@ -104,26 +104,21 @@ void updatePlayer() {
     getline(cin, newName);
     if (!newName.empty()) team[index].name = newName;
 
-
-    player p; 
+     
     cout << "\nEnter player update: ";
     
     cout << "updated goals: ";
-    cin >> p.goals; 
+    cin >> team[index].goals; 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "updated assists: ";
-    cin >> p.assists; 
+    cin >> team[index].assists; 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "updated games played: "; 
-    cin >> p.gamesPlayed;
+    cin >> team[index].gamesPlayed;
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-
-    team[index].goals = p.goals;
-    team[index].assists = p.assists;
-    team[index].gamesPlayed = p.gamesPlayed;
-
+    
     cout << "\nPlayer updated successfully!\n";
 
     
@@ -164,6 +159,8 @@ void loadFromFile() {
 
     string line;
     while (getline(file, line)) {
+        if (line.empty()) continue;
+
         player p;
         size_t pos = 0;
 
