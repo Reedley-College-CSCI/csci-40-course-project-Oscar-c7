@@ -169,18 +169,18 @@ void menu() {
         cin >> choice;
 
 
-    }
-}
+        switch (choice) {
 
-switch (choice) {
-    case 1: addPlayer(); break;
-    case 2: viewPlayers(); break;
-    case 3: updatePlayer(); break;
-    case 4: removePlayer(); break;  
-    case 5: saveToFile(); cout << "\nsaved. Exiting...\n"; break;
-    default: cout << "\nInvalid choice. Please try again.\n"; break;
+            case 1: addPlayer(); break;
+            case 2: viewPlayers(); break;
+            case 3: updatePlayer(); break;
+            case 4: removePlayer(); break;  
+            case 5: saveToFile(); cout << "\nsaved. Exiting...\n"; break;
+            default: cout << "\nInvalid choice. Please try again.\n"; break;
+        }
+    } while (choice != 5);
 }
-     while (choice != 5);
+  
 
 
 
