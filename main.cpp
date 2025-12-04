@@ -111,6 +111,12 @@ void updatePlayer() {
     cout << "updated games played: "; 
     cin >> p.gamesPlayed; 
 
+    team[index].goals = p.goals;
+    team[index].assists = p.assists;
+    team[index].gamesPlayed = p.gamesPlayed;
+
+    cout << "\nPlayer updated successfully!\n";
+
     
     return;
 
