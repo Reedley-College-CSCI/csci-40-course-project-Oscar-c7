@@ -155,7 +155,26 @@ void loadFromFile() {
     ifstream file("team_data.txt");
     if (!file) return;
 
-    player p;
+    string line;
+    while (getline(file, line)) {
+        player p;
+        size_t pos = 0;
+
+        pos = line.find(',');
+        p.name = line.substr(0, pos);
+        line.erase(0, pos + 1);
+
+        pos = line.find(',');
+        p.goals = stoi(line.substr(0, pos));
+        line.erase(0, pos + 1);
+
+        pos = line.find(',');
+        p.assists = stoi(line.substr(0, pos));
+        line.erase(0, pos + 1);
+
+        p.gamesPlayed = stoi(line);
+
+        team.push_back(p);
     
            
     }
