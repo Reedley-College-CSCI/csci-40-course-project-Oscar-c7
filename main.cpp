@@ -215,7 +215,14 @@ void sortPlayersByGoals() {
         return;
     }
 
-    
+    for (size_t i = 0; i < team.size() - 1; ++i) {
+        for (size_t j = 0; j < team.size() - i - 1; ++j) {
+            if (team[j].goals < team[j + 1].goals) {
+                swap(team[j], team[j + 1]);
+            }
+        }
+    }
+    cout << "\nPlayers sorted by goals (highest to lowest);\n";
 }
 
 void loadFromFile() {
@@ -268,7 +275,9 @@ void menu() {
         cout << "4. Remove Player\n";
         cout << "5. Show Top Scorer\n";
         cout << "6. Show Average Goals\n";
-        cout << "7. Save & Exit\n";
+        cout << "7. Search Player by Name\n";
+        cout << "8. Sort Players by Goals\n";
+        cout << "9. Save & Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -281,11 +290,13 @@ void menu() {
             case 3: updatePlayer(); break;
             case 4: removePlayer(); break;
             case 5: showTopScorer(); break;
-            case 6: showAverageGoals(); break;  
-            case 7: saveToFile(); cout << "\nsaved. Exiting...\n"; break;
+            case 6: showAverageGoals(); break;
+            case 7: searchPlayerByName(); break;
+            case 8: sortPlayersByGoals(); break;  
+            case 9: saveToFile(); cout << "\nsaved. Exiting...\n"; break;
             default: cout << "\nInvalid choice. Please try again.\n"; break;
         }
-    } while (choice != 7); 
+    } while (choice != 9); 
 }
   
 
