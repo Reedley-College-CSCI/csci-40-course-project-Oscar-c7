@@ -248,7 +248,7 @@ void menu() {
             case 7: saveToFile(); cout << "\nsaved. Exiting...\n"; break;
             default: cout << "\nInvalid choice. Please try again.\n"; break;
         }
-    } while (choice != 7);
+    } while (choice != 7); 
 }
   
 
