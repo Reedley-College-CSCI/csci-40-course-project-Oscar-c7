@@ -167,7 +167,19 @@ void showTopScorer() {
          << " | Goals: " << team[topIndex].goals << endl;
 }
 
+void showAverageGoals() {
+    if (team.empty()) {
+        cout << "\nNo players available.\n";
+        return;
+    }
+    double total = 0;
+    for (auto &p : team)
+        total += p.goals;
 
+    double average = total / team.size();
+    cout << "\nAverage Goals per Player: " << average << endl;
+    
+}
 
 void loadFromFile() {
     ifstream file("team_data.txt");
