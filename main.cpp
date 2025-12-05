@@ -30,6 +30,8 @@ void addPlayer();
 void viewPlayers();
 void updatePlayer();
 void removePlayer();
+void showTopScorer();
+void showAverageGoals();
 void saveToFile();
 void loadFromFile();
 void menu();
@@ -44,7 +46,7 @@ int main() {
 void addPlayer() {
     player p; 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    
+
     cout << "\nEnter player name: ";
     getline(cin, p.name);
 
@@ -90,6 +92,7 @@ void updatePlayer() {
     size_t index;
     cout << "\nEnter the number of the player to update: ";
     cin >> index;
+
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     if (index < 1 || index > team.size()) {
