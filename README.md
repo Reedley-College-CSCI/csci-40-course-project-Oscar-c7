@@ -76,12 +76,14 @@ Invalid input. Please enter a number between 1 and 9.
 - Explain the main functionality of your program.  
 - **Include a link to your required video demonstration** showcasing how the project works (**3-7 minutes**). 
     Make sure it shareable without approval needed.
+https://youtu.be/DoXy_7E3lY8
 
 ---
 
 ## 5. Challenges and Lessons Learned
 - What challenges did you encounter while working on this project? 
-I encounterd crashes in my program output when i would enter anything besides a number. I solved this issue by adding an if statement that allowed input validation. 
+I encounterd crashes in my program output when i would enter anything besides a number. I solved this issue by adding an if statement that allowed input validation.
+
 - What key lessons did you learn about programming and problem-solving? 
 I learned that you really have to think and pay close attention to the program you are writing. Because the slighest of mistakes will make you program break. Also sometimes you are going to overthink when trying to problem solve my partner and me ran into this more often that we would have liked.  
 
