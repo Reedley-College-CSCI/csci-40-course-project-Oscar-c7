@@ -282,6 +282,13 @@ void menu() {
         cin >> choice;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+        if (!cin >> choice) {
+            cin.clear(); 
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+            cout << "\nInvalid input. Please enter a number between 1 and 9.\n";
+            continue; 
+        }
+
 
         switch (choice) {
 
