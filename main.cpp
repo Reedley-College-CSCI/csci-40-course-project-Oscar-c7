@@ -183,7 +183,40 @@ void showAverageGoals() {
     
 }
 
+void searchPlayerByName() {
+    if (team.empty()) {
+        cout << "\nNo players available.\n";
+        return;
+    }
+    cout << "\nEnter player name to search: ";
+    string searchName;
+    getline(cin, searchName);
+    bool found = false;
 
+    for (size_t i = 0; i < team.size(); ++i) {
+        if (team[i].name == searchName) {
+            cout << "\nPlayer Found:\n"; 
+            cout << i + 1 << ". " << team[i].name 
+                 << " | Goals: " << team[i].goals
+                 << " | Assists: " << team[i].assists
+                 << " | Games Played: " << team[i].gamesPlayed << endl;
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        cout << "\nPlayer not found.\n";
+    }
+}
+
+void sortPlayersByGoals() {
+    if(team.empty()) {
+        cout << "\nNo players available.\n";
+        return;
+    }
+
+    
+}
 
 void loadFromFile() {
     ifstream file("team_data.txt");
