@@ -32,6 +32,8 @@ void updatePlayer();
 void removePlayer();
 void showTopScorer();
 void showAverageGoals();
+void searchPlayerByName();
+void sortPlayersByGoals();
 void saveToFile();
 void loadFromFile();
 void menu();
@@ -180,6 +182,8 @@ void showAverageGoals() {
     cout << "\nAverage Goals per Player: " << average << endl;
     
 }
+
+
 
 void loadFromFile() {
     ifstream file("team_data.txt");
