@@ -36,8 +36,6 @@ void saveToFile();
 void loadFromFile();
 void menu();
 
-
-
 int main() {
     loadFromFile();
     
@@ -153,6 +151,23 @@ void saveToFile() {
         file << p.name << "," << p.goals << "," << p.assists << "," << p.gamesPlayed << "\n";
     }
 }
+
+void showTopScorer() {
+    if (team.empty()) {
+        cout << "\nNo players available.\n";
+        return;
+    }
+    size_t topIndex = 0;
+    for (size_t i = 1; i < team.size(); ++i) {
+        if (team[i].goals > team[topIndex].goals) {
+            topIndex = i;
+        }
+    }
+    cout << "\nTop Scorer: " << team[topIndex].name 
+         << " | Goals: " << team[topIndex].goals << endl;
+}
+
+
 
 void loadFromFile() {
     ifstream file("team_data.txt");
