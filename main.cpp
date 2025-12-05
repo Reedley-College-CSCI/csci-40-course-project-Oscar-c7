@@ -229,7 +229,9 @@ void menu() {
         cout << "2. View Players\n";
         cout << "3. Update Player\n";
         cout << "4. Remove Player\n";
-        cout << "5. Save & Exit\n";
+        cout << "5. Show Top Scorer\n";
+        cout << "6. Show Average Goals\n";
+        cout << "7. Save & Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -240,11 +242,13 @@ void menu() {
             case 1: addPlayer(); break;
             case 2: viewPlayers(); break;
             case 3: updatePlayer(); break;
-            case 4: removePlayer(); break;  
-            case 5: saveToFile(); cout << "\nsaved. Exiting...\n"; break;
+            case 4: removePlayer(); break;
+            case 5: showTopScorer(); break;
+            case 6: showAverageGoals(); break;  
+            case 7: saveToFile(); cout << "\nsaved. Exiting...\n"; break;
             default: cout << "\nInvalid choice. Please try again.\n"; break;
         }
-    } while (choice != 5);
+    } while (choice != 7);
 }
   
 
